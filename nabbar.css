@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the navigation bar */
+.navbar {
+    background-color: #2c3e50; /* Dark background color */
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+/* Navbar container to center the items */
+.navbar-container {
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 15px 20px; /* Add some padding */
+    display: flex;
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+}
+
+/* Style the logo */
+.navbar .logo {
+    font-size: 28px; /* Adjust the logo font size */
+    font-weight: bold;
+    color: #ecf0f1; /* Light text color */
+    text-decoration: none;
+}
+
+/* Style the navigation links */
+.navbar .navbar-links {
+    list-style-type: none; /* Remove bullet points */
+    display: flex;
+}
+
+.navbar .navbar-links li {
+    margin-right: 20px; /* Add spacing between links */
+}
+
+.navbar .navbar-links a {
+    color: #ecf0f1; /* Light text color */
+    text-decoration: none; /* Remove underlines from links */
+    font-weight: bold;
+    transition: 0.3s; /* Add smooth hover effect */
+}
+
+/* Style the navigation links on hover */
+.navbar .navbar-links a:hover {
+    color: #3498db; /* Change text color on hover */
+}
