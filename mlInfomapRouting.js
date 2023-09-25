@@ -67,8 +67,6 @@ map.on('click', async function (event) {
       }
     }
     findVertexId(souceCo,destinCo);
-      // Call the function to find the destination vertex and calculate the route
-      
     }
   catch (error) {
     console.log(error);
@@ -77,10 +75,10 @@ map.on('click', async function (event) {
 });
 
 
-async function findVertexId(...data) {
+async function findVertexId(...dataCoordinates) {
   try {
-    let url_1 = `http://localhost:3906/akashApi/getFirstVertex?lat=${data[0][1]}&lng=${data[0][0]}`;
-    let url_2 = `http://localhost:3906/akashApi/getSecondVertex?lat=${data[1][1]}&lng=${data[1][0]}`;
+    let url_1 = `http://localhost:3906/akashApi/getFirstVertex?lat=${dataCoordinates[0][1]}&lng=${dataCoordinates[0][0]}`;
+    let url_2 = `http://localhost:3906/akashApi/getSecondVertex?lat=${dataCoordinates[1][1]}&lng=${dataCoordinates[1][0]}`;
 
     let responseVrtx1 = await fetch(url_1);
     let responseVrtx2 = await fetch(url_2);
@@ -97,9 +95,9 @@ async function findVertexId(...data) {
   }
 
 }
-async function calculateAndDisplayRoute(...sourcedestID) {
+async function calculateAndDisplayRoute(...sourceDestID) {
   try {
-    let routeUrl = `http://localhost:3906/akashApi/getRouteUsingVertex?ver1=${sourcedestID[0]}&ver2=${sourcedestID[1]}`;
+    let routeUrl = `http://localhost:3906/akashApi/getRouteUsingVertex?ver1=${sourceDestID[0]}&ver2=${sourceDestID[1]}`;
     let response = await fetch(routeUrl);
     let data = await response.json();
 
@@ -112,13 +110,14 @@ async function calculateAndDisplayRoute(...sourcedestID) {
         features.push(routeFeature);
       });
       
+      let randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
       let routeLayer = new ol.layer.Vector({
         source: new ol.source.Vector({
           features: features,
         }),
         style: new ol.style.Style({
           stroke: new ol.style.Stroke({
-            color: '#F31559',
+            color: randomColor,
             width: 8,
           }),
         }),

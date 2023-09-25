@@ -4,48 +4,60 @@
     box-sizing: border-box;
 }
 
-/* Style the navigation bar */
+
 .navbar {
-    background-color: #2c3e50; /* Dark background color */
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    background-color: #2c3e50; 
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2); 
 }
 
-/* Navbar container to center the items */
 .navbar-container {
-    max-width: 1200px; /* Maximum width of the container */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 15px 20px; /* Add some padding */
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 15px 20px; 
     display: flex;
-    justify-content: space-between; /* Space items evenly */
-    align-items: center; /* Center items vertically */
+    justify-content: space-between; 
+    align-items: center; 
 }
 
-/* Style the logo */
+
 .navbar .logo {
-    font-size: 28px; /* Adjust the logo font size */
+    font-size: 28px; 
     font-weight: bold;
-    color: #ecf0f1; /* Light text color */
+    color: #ecf0f1; 
     text-decoration: none;
 }
 
-/* Style the navigation links */
+
 .navbar .navbar-links {
-    list-style-type: none; /* Remove bullet points */
+    list-style-type: none; 
     display: flex;
 }
 
 .navbar .navbar-links li {
-    margin-right: 20px; /* Add spacing between links */
+    margin-right: 20px; 
 }
 
 .navbar .navbar-links a {
-    color: #ecf0f1; /* Light text color */
-    text-decoration: none; /* Remove underlines from links */
+    color: #ecf0f1; 
+    text-decoration: none; 
     font-weight: bold;
-    transition: 0.3s; /* Add smooth hover effect */
+    transition: 0.3s; 
 }
 
-/* Style the navigation links on hover */
+
 .navbar .navbar-links a:hover {
-    color: #3498db; /* Change text color on hover */
+    color: #3498db;
+}
+
+.logo {
+    display: flex; /* Use flexbox to align the logo horizontally */
+    align-items: center; /* Vertically center the logo */
+}
+
+/* Style the logo image */
+.logo img {
+    width: 47px; 
+    height: auto; 
+    margin-right: 10px; 
+    border-radius: 22px;
 }
